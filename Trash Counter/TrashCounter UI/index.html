@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <div id="alert" class="alert"></div> <!-- Alert message div -->
+        <div id="user-table">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Points</th>
+                        <th>UID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    <!-- Dynamic Content -->
+                </tbody>
+            </table>
+        </div>
+        <button id="add-user-button">Add New User</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="add-user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New User</h2>
+            <form id="add-user-form">
+                <label for="new-uid">UID:</label>
+                <input type="text" id="new-uid" required>
+                <label for="new-name">Name:</label>
+                <input type="text" id="new-name" required>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
